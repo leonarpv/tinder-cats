@@ -24,8 +24,9 @@ const CatItem = ({cat, key}: {cat: Cat; key: any}) => {
 
   return (
     <ItemContainer key={key}>
-      {image !== 'undefined' && (
+      {image.url !== 'undefined' && (
         <ImageElement
+          resizeMode="cover"
           key={`${cat.internalId}_${cat.id}`}
           source={{uri: image.url}}
         />
