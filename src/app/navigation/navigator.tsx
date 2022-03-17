@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Routes} from './routes';
-import Home from '../../infrastructure/ui/screens/Home'
-import Messaging from '../../infrastructure/ui/screens/Messaging'
-import Profile from '../../infrastructure/ui/screens/Profile'
+import Home from '../../infrastructure/ui/screens/Home';
+import Messaging from '../../infrastructure/ui/screens/Messaging';
+import Profile from '../../infrastructure/ui/screens/Profile';
 
 type AppStackParamList = {
   [Routes.Home]: {};

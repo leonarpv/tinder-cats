@@ -7,6 +7,7 @@ import {
 import {createRef} from 'react';
 import {mainBackground} from '../../infrastructure/utils/colors';
 import CatsNavigator from './navigator';
+import Home from '../../infrastructure/ui/screens/Home';
 
 const AppNavigator = () => {
   const navigationRef = createRef<NavigationContainerRef>();
@@ -19,11 +20,7 @@ const AppNavigator = () => {
     },
   };
 
-  return (
-    <NavigationContainer theme={MyTheme} ref={navigationRef}>
-      <CatsNavigator />
-    </NavigationContainer>
-  );
+  return <Home />;
 };
 
 export default AppNavigator;

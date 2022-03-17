@@ -10,7 +10,6 @@
 
 import React from 'react';
 import {SafeAreaView, useColorScheme} from 'react-native';
-
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/app/navigation';
 
