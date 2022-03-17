@@ -14,17 +14,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/app/navigation';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <AppNavigator />
-    </SafeAreaView>
-  );
+  return <AppNavigator />;
 };
 
 export default App;

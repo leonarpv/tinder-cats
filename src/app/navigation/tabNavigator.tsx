@@ -4,64 +4,50 @@ import Home from '../../infrastructure/ui/screens/Home';
 import Messaging from '../../infrastructure/ui/screens/Messaging';
 import Profile from '../../infrastructure/ui/screens/Profile';
 import {Routes} from './routes';
-import {Text, TouchableOpacity} from 'react-native';
-import {blue, white, whiteBackground} from '../../infrastructure/utils/colors';
 import TabIcon from '../../infrastructure/ui/components/TabIcon';
-
-const Tab = createBottomTabNavigator();
-const tabBarOptions = {
-  activeTintColor: whiteBackground,
-
-  style: {
-    borderTopWidth: 0,
-    paddingTop: 5,
-  },
+import {baseShadow} from '../../infrastructure/utils/shadows';
+export type HomeTabStackParamList = {
+  [Routes.HomeTab]: {};
+  [Routes.TabMessaging]: {};
+  [Routes.TabProfile]: {};
 };
+const Tab = createBottomTabNavigator<HomeTabStackParamList>();
 
-export const defaultNavOptions = () => ({
-  headerStyle: {
-    backgroundColor: blue,
-  },
-  headerBackTitleStyle: {
-    color: white,
-  },
-  headerTitleStyle: {
-    color: white,
-  },
-  headerTintColor: white,
+const screenOptions = () => ({
+  tabBarIcon: TabIcon,
+  title: '',
 });
-
+const internalScreenOptions = () => ({
+  headerShown: false,
+  tabBarStyle: {
+    position: 'absolute',
+    bottom: 32,
+    height: 44,
+    elevation: 0,
+    left: 100,
+    right: 100,
+    borderRadius: 25,
+    padding: 20,
+    ...baseShadow,
+  },
+});
 const TabNavigator = () => {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarIcon: TabIcon,
-        title: '',
-      }}>
+    <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name={Routes.Home}
+        name={Routes.HomeTab}
+        options={internalScreenOptions}
         component={Home}
-        options={({navigation}) => ({
-          tabBarButton: props => (
-            <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-              <Text>Settings</Text>
-            </TouchableOpacity>
-          ),
-        })}
       />
       <Tab.Screen
-        name={Routes.Messaging}
+        name={Routes.TabMessaging}
+        options={internalScreenOptions}
         component={Messaging}
-        options={{
-          tabBarButton: (props: any) => <Text>Prueba</Text>,
-        }}
       />
       <Tab.Screen
-        name={Routes.Profile}
+        name={Routes.TabProfile}
+        options={internalScreenOptions}
         component={Profile}
-        options={{
-          tabBarButton: (props: any) => <Text>Prueba</Text>,
-        }}
       />
     </Tab.Navigator>
   );

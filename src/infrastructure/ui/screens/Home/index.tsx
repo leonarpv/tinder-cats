@@ -8,7 +8,7 @@ import CustomText, {TextSize} from '../../components/CustomText';
 import ScreenIndicator from '../../components/CustomText';
 import ScreenLayout from '../../components/ScreenLayout';
 
-const Home = () => {
+function Home() {
   const [loading, setLoading] = useState<boolean>(true);
   const [cats, setCats] = useState<Cat[]>([]);
 
@@ -31,6 +31,6 @@ const Home = () => {
       {cats.length > 0 && <CatsPager cats={cats} />}
     </ScreenLayout>
   );
-};
+}
 
 export default Home;

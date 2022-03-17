@@ -8,19 +8,16 @@ import {createRef} from 'react';
 import {mainBackground} from '../../infrastructure/utils/colors';
 import CatsNavigator from './navigator';
 import Home from '../../infrastructure/ui/screens/Home';
+import TabNavigator from './tabNavigator';
+import {StatusBar} from 'react-native';
 
 const AppNavigator = () => {
-  const navigationRef = createRef<NavigationContainerRef>();
-
-  const MyTheme = {
-    ...DefaultTheme,
-    colors: {
-      ...DefaultTheme.colors,
-      background: mainBackground,
-    },
-  };
-
-  return <Home />;
+  return (
+    <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
+      <CatsNavigator />
+    </NavigationContainer>
+  );
 };
 
 export default AppNavigator;

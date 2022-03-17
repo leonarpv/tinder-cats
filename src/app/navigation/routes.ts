@@ -1,15 +1,18 @@
 import {ImageSourcePropType} from 'react-native';
-import icHome from '../assets/cat.png';
+import icCat from '../assets/cat.png';
+import icUser from '../assets/user.png';
+import icMessage from '../assets/messageCircle.png';
+export const noHeader = {
+  headerShown: false,
+};
 export enum Routes {
   HomeTab = 'HomeTab',
-  Home = 'Home',
-  Messaging = 'Messaging',
-  Profile = 'Profile',
+  TabMessaging = 'TabMessaging',
+  TabProfile = 'TabProfile',
 }
 
 export const NAV_ICONS: {[name: string]: ImageSourcePropType} = {
-  [Routes.HomeTab]: icHome,
-  [Routes.Home]: icHome,
-  [Routes.Messaging]: icHome,
-  [Routes.Profile]: icHome,
+  [Routes.HomeTab]: icCat,
+  [Routes.TabMessaging]: icMessage,
+  [Routes.TabProfile]: icUser,
 };
