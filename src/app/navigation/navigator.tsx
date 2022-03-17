@@ -4,7 +4,7 @@ import {noHeader, Routes} from './routes';
 import TabNavigator from './tabNavigator';
 
 type AppStackParamList = {
-  [Routes.HomeTab]: {};
+  [Routes.Home]: {};
 };
 
 const Stack = createStackNavigator<AppStackParamList>();
@@ -13,7 +13,7 @@ const CatsNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={Routes.HomeTab}
+        name={Routes.Home}
         component={TabNavigator}
         options={noHeader}
       />

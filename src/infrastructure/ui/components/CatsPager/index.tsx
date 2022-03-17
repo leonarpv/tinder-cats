@@ -10,7 +10,7 @@ import VoteButtons, {VoteAction} from '../VoteButtons';
 import CatController from '../../../controllers/CatController';
 
 const Page = styled.View`
-  height: ${SCREEN_HEIGHT};
+  height: ${SCREEN_HEIGHT}px;
   justify-content: space-evenly;
 `;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text} from 'react-native';
+import {Image} from 'react-native';
 import styled from 'styled-components/native';
 import Cat from '../../../../domain/entities/Cat';
 import xImage from '../../../../app/assets/xImage.png';

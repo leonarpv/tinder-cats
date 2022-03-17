@@ -19,11 +19,11 @@ const Summary = styled.View`
   padding-right: 20px;
   width: 100%;
 `;
-const CatItem = ({cat, key}: {cat: Cat; key: any}) => {
+const CatItem = ({cat}: {cat: Cat}) => {
   const {image, ...restProps} = cat;
 
   return (
-    <ItemContainer key={key}>
+    <ItemContainer>
       {image.url !== 'undefined' && (
         <ImageElement
           resizeMode="cover"

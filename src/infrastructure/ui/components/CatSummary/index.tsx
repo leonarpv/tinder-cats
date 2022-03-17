@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {white} from '../../../utils/colors';
+import CustomText, {TextSize} from '../CustomText';
 
 const SummaryContainer = styled.View`
   display: flex;
@@ -18,19 +19,6 @@ const Section = styled.View`
   flex-direction: column;
 `;
 
-const Name = styled.Text`
-  font-size: 16px;
-  font-weight: 700;
-`;
-const Origin = styled.Text`
-  font-size: 8px;
-  font-weight: 700;
-`;
-const Affection = styled.Text`
-  font-size: 20px;
-  font-weight: 700;
-`;
-
 const CatSummary = ({
   name,
   origin,
@@ -43,11 +31,11 @@ const CatSummary = ({
   return (
     <SummaryContainer>
       <Section>
-        <Name>{name}</Name>
-        <Origin>{origin}</Origin>
+        <CustomText size={TextSize.Medium}>{name}</CustomText>
+        <CustomText size={TextSize.Small}>{origin}</CustomText>
       </Section>
       <Section>
-        <Affection>{affection_level}</Affection>
+        <CustomText size={TextSize.Medium}>{affection_level}</CustomText>
       </Section>
     </SummaryContainer>
   );

@@ -6,7 +6,7 @@ import {SCREEN_HEIGHT} from '../../../utils/utils';
 const ScreenContainer = styled.View`
   display: flex;
   padding: 16px;
-  height: ${SCREEN_HEIGHT};
+  height: ${SCREEN_HEIGHT}px;
   background-color: ${mainBackground};
 `;
 export default function ScreenLayout({children}: {children: ReactNode}) {

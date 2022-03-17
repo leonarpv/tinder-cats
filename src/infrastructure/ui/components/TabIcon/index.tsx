@@ -1,5 +1,4 @@
 import React from 'react';
-import {Image, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {NAV_ICONS} from '../../../../app/navigation/routes';
 import styled from 'styled-components';
@@ -9,12 +8,12 @@ const ImageContainer = styled.View`
   justify-content: center;
 `;
 const ImageItem = styled.Image`
-  height: 20;
-  width: 20;
+  height: 20px;
+  width: 20px;
 `;
 function TabIcon() {
   const route = useRoute();
-  console.log({route});
+
   return (
     <ImageContainer>
       <ImageItem source={NAV_ICONS[route.name]} />

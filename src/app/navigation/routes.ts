@@ -6,6 +6,7 @@ export const noHeader = {
   headerShown: false,
 };
 export enum Routes {
+  Home = 'Home',
   HomeTab = 'HomeTab',
   TabMessaging = 'TabMessaging',
   TabProfile = 'TabProfile',
