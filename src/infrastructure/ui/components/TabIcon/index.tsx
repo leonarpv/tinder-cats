@@ -2,21 +2,26 @@ import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import {NAV_ICONS} from '../../../../app/navigation/routes';
 import styled from 'styled-components';
+import {Image} from 'react-native';
+import styles from './styles';
 const ImageContainer = styled.View`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
-const ImageItem = styled.Image`
-  height: 20px;
-  width: 20px;
-`;
-function TabIcon() {
+
+interface Props {
+  focused: boolean;
+}
+function TabIcon({focused}: Props) {
   const route = useRoute();
 
   return (
     <ImageContainer>
-      <ImageItem source={NAV_ICONS[route.name]} />
+      <Image
+        style={[styles.baseImage, !focused && styles.unFocusedImage]}
+        source={NAV_ICONS[route.name]}
+      />
     </ImageContainer>
   );
 }

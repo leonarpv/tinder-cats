@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import CatSummary from '../CatSummary';
 import Cat from '../../../../domain/entities/Cat';
 import {graphsGray} from '../../../utils/colors';
-import placeHolder from '../../../../app/assets/cat_place.png';
 import {useState} from 'react';
 
 const ItemContainer = styled.View`
@@ -42,7 +41,6 @@ const CatItem = ({cat}: {cat: Cat}) => {
           uri: image?.url || place,
         }}
       />
-
       <Summary>
         <CatSummary {...restProps} />
       </Summary>

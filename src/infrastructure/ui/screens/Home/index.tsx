@@ -5,17 +5,29 @@ import Cat from '../../../../domain/entities/Cat';
 import CatController from '../../../controllers/CatController';
 import {SCREEN_HEIGHT} from '../../../utils/utils';
 import CatItem from '../../components/CatItem';
-
+import SwitchToggle from 'react-native-switch-toggle';
 import Loading from '../../components/Loading';
 import ScreenLayout from '../../components/ScreenLayout';
 import VoteButtons, {VoteAction} from '../../components/VoteButtons';
+
 const Page = styled.View`
   height: ${SCREEN_HEIGHT}px;
   justify-content: space-evenly;
 `;
 
+const SwitchContainer = styled.View`
+  position: absolute;
+  z-index: 2;
+  top: 60;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
 function Home() {
   const [refreshing, setRefreshing] = useState(false);
+  const [on, setOn] = useState(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [cats, setCats] = useState<Cat[]>([]);
   const flatList = useRef();
@@ -61,6 +73,16 @@ function Home() {
 
   return (
     <ScreenLayout>
+      <SwitchContainer>
+        <SwitchToggle
+          switchOn={on}
+          circleColorOff="#EC537E"
+          circleColorOn="#BFBFC0"
+          backgroundColorOn="#E3E3E4"
+          backgroundColorOff="#E3E3E4"
+          onPress={() => setOn(!on)}
+        />
+      </SwitchContainer>
       {loading && <Loading />}
       {!loading && cats.length > 0 && (
         <FlatList
