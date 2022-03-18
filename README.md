@@ -1,4 +1,6 @@
 # Tinder Cats
+![Alt Text](tinder.gif)
+
 
 This challenge it was started using the following architecture and methodologies and technical decisions.
 
